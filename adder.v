@@ -14,6 +14,7 @@ module adder(
 	output reg [31:0] result,
 	output reg zero);
 	
+	
 	always @(negedge clock) begin			  		// -IAN-	changed to clock on NEGEDGE 
 
 		if (ALUOp == 4'b0001) begin 			  	//			ALUOp = 0001 means ADD instruction
@@ -37,7 +38,7 @@ module adder(
 		end else if (ALUOp == 4'b1000) begin	//-tony-	ALUOp = 1000 means SRL function
 			result <= rt >> shamt;
 		end else if (ALUOp == 4'b1001) begin	//-tony-	ALUOp = 1001 means SRA function
-			
+			result <= rt >>> shamt;											
 		end else if (ALUOp == 4'b0000) begin 	//			ALUOp = 0000 means no ALU function
 			result <= 0;
 		end
