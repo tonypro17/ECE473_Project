@@ -39,7 +39,7 @@ module control(
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0001;
+				ALUOp <= 4'b1010;
 				ALUSrc <= 0;
 			end else if (funct == 6'b100010) begin	// -IAN-	funct = 100010 means SUB intstruction
 				RegWrite <= 1;
@@ -57,7 +57,7 @@ module control(
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0010;
+				ALUOp <= 4'b1011;
 				ALUSrc <= 0;
 			end else if (funct == 6'b100100) begin	// -IAN-	funct = 1001000 means AND instruction
 				RegWrite <= 1;
