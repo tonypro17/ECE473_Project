@@ -3,56 +3,56 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -11.887
-TNS   : -167.673
+Slack : -11.738
+TNS   : -184.281
 
 Type  : Slow Model Setup 'KEY[1]'
-Slack : -9.474
-TNS   : -6705.779
+Slack : -9.056
+TNS   : -6513.882
 
 Type  : Slow Model Setup 'pipereg:IF_ID|out1[26]'
-Slack : -4.331
-TNS   : -20.575
-
-Type  : Slow Model Setup 'clk_div:clockdiv|clock_100hz_reg'
-Slack : -0.208
-TNS   : -0.301
-
-Type  : Slow Model Setup 'clk_div:clockdiv|clock_100Khz_reg'
-Slack : -0.083
-TNS   : -0.166
-
-Type  : Slow Model Setup 'clk_div:clockdiv|clock_1Khz_reg'
-Slack : -0.072
-TNS   : -0.109
-
-Type  : Slow Model Setup 'clk_div:clockdiv|clock_1Mhz_reg'
-Slack : -0.070
-TNS   : -0.207
-
-Type  : Slow Model Setup 'clk_div:clockdiv|clock_10Khz_reg'
-Slack : -0.064
-TNS   : -0.146
+Slack : -4.255
+TNS   : -20.802
 
 Type  : Slow Model Setup 'clk_div:clockdiv|clock_10Hz_reg'
-Slack : -0.062
-TNS   : -0.131
+Slack : -0.244
+TNS   : -0.297
+
+Type  : Slow Model Setup 'clk_div:clockdiv|clock_1Khz_reg'
+Slack : -0.238
+TNS   : -0.310
+
+Type  : Slow Model Setup 'clk_div:clockdiv|clock_1Mhz_reg'
+Slack : -0.082
+TNS   : -0.162
+
+Type  : Slow Model Setup 'clk_div:clockdiv|clock_100hz_reg'
+Slack : -0.068
+TNS   : -0.136
+
+Type  : Slow Model Setup 'clk_div:clockdiv|clock_100Khz_reg'
+Slack : -0.061
+TNS   : -0.144
+
+Type  : Slow Model Setup 'clk_div:clockdiv|clock_10Khz_reg'
+Slack : -0.061
+TNS   : -0.129
 
 Type  : Slow Model Setup 'SW[15]'
-Slack : 0.631
+Slack : 0.823
 TNS   : 0.000
 
 Type  : Slow Model Hold 'KEY[1]'
-Slack : -1.272
-TNS   : -3.956
+Slack : -1.289
+TNS   : -2.576
 
 Type  : Slow Model Hold 'SW[15]'
-Slack : -1.039
-TNS   : -4.866
+Slack : -1.207
+TNS   : -5.894
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -0.013
-TNS   : -0.013
+Slack : 0.136
+TNS   : 0.000
 
 Type  : Slow Model Hold 'clk_div:clockdiv|clock_100Khz_reg'
 Slack : 0.391
@@ -79,7 +79,7 @@ Slack : 0.391
 TNS   : 0.000
 
 Type  : Slow Model Hold 'pipereg:IF_ID|out1[26]'
-Slack : 3.226
+Slack : 3.469
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'KEY[1]'
@@ -123,56 +123,56 @@ Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -5.514
-TNS   : -52.404
+Slack : -5.350
+TNS   : -55.838
 
 Type  : Fast Model Setup 'KEY[1]'
-Slack : -4.048
-TNS   : -2890.457
+Slack : -3.883
+TNS   : -2804.404
 
 Type  : Fast Model Setup 'pipereg:IF_ID|out1[26]'
-Slack : -1.965
-TNS   : -9.282
+Slack : -1.907
+TNS   : -9.258
 
-Type  : Fast Model Setup 'clk_div:clockdiv|clock_100hz_reg'
-Slack : 0.439
-TNS   : 0.000
-
-Type  : Fast Model Setup 'clk_div:clockdiv|clock_100Khz_reg'
-Slack : 0.496
+Type  : Fast Model Setup 'clk_div:clockdiv|clock_10Hz_reg'
+Slack : 0.430
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clk_div:clockdiv|clock_1Khz_reg'
-Slack : 0.504
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clk_div:clockdiv|clock_1Mhz_reg'
-Slack : 0.505
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clk_div:clockdiv|clock_100Khz_reg'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clk_div:clockdiv|clock_100hz_reg'
+Slack : 0.508
 TNS   : 0.000
 
 Type  : Fast Model Setup 'clk_div:clockdiv|clock_10Khz_reg'
 Slack : 0.508
 TNS   : 0.000
 
-Type  : Fast Model Setup 'clk_div:clockdiv|clock_10Hz_reg'
-Slack : 0.512
-TNS   : 0.000
-
 Type  : Fast Model Setup 'SW[15]'
-Slack : 0.828
+Slack : 1.067
 TNS   : 0.000
 
 Type  : Fast Model Hold 'SW[15]'
-Slack : -0.794
-TNS   : -3.651
+Slack : -0.972
+TNS   : -4.649
 
 Type  : Fast Model Hold 'KEY[1]'
-Slack : -0.627
-TNS   : -2.121
+Slack : -0.610
+TNS   : -1.281
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -0.079
-TNS   : -0.124
+Slack : -0.023
+TNS   : -0.049
 
 Type  : Fast Model Hold 'clk_div:clockdiv|clock_100Khz_reg'
 Slack : 0.215
@@ -199,7 +199,7 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'pipereg:IF_ID|out1[26]'
-Slack : 2.052
+Slack : 2.153
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'KEY[1]'
