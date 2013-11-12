@@ -7,6 +7,7 @@ module adder(
 	input wire [31:0] rs,
 	input wire [31:0] rt,
 	input wire [3:0] ALUOp,
+	input wire [4:0] shamt,
 	input wire clock,        				  		// -IAN-	added clock so ALU can be clocked on NEGEDGE (suggested by TA)
 	output reg [31:0] result,
 	output reg zero);
@@ -25,17 +26,17 @@ module adder(
 			result <= rs ^~ rt;
 		end else if (ALUOp == 4'b0110) begin	//-tony- ALUOp = 0110 means SLT instruction
 			if (rs < rt) begin
-				result = 1;
+				result <= 1;
 			end else begin
-				result = 0;
+				result <= 0;
 			end
 		end else if (ALUOp == 4'b0111) begin	//-tony-	ALUOp = 0111 means SLL function
-		
+			result <= rt << shamt;
 		end else if (ALUOp == 4'b1000) begin	//-tony-	ALUOp = 1000 means SRL function
-		
+			result <= rt >> shamt;
 		end else if (ALUOp == 4'b1001) begin	//-tony-	ALUOp = 1001 means SRA function
-		
-		end else if (ALUOp == 4'b000) begin 	//			ALUOp = 000 means no ALU function
+			
+		end else if (ALUOp == 4'b0000) begin 	//			ALUOp = 0000 means no ALU function
 			result <= 0;
 		end
 			

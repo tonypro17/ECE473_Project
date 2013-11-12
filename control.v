@@ -75,7 +75,7 @@ module control(
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b0100;
 				ALUSrc <= 0;
 			end else if (funct == 6'b100111) begin	//-tony- funct = 100111 means NOR instruction
 				RegWrite <= 1;
@@ -84,50 +84,50 @@ module control(
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b0101;
 				ALUSrc <= 0;
 			end else if (funct == 6'b101010) begin	//-tony-	funct = 101010 means SLT instruction
-				RegWrite <= 0;
+				RegWrite <= 1;
 				MemToReg <= 0;
 				MemRead <= 0;
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b0110;
 				ALUSrc <= 0;
 			end else if (funct == 6'b000000) begin	//-tony-	funct = 000000 means NOP/SLL instruction
-				RegWrite <= 0;
+				RegWrite <= 1;
 				MemToReg <= 0;
 				MemRead <= 0;
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b0111;
 				ALUSrc <= 0;
 			end else if (funct == 6'b000010) begin	//-tony-	funct = 000010 means SRL instruction
-				RegWrite <= 0;
+				RegWrite <= 1;
 				MemToReg <= 0;
 				MemRead <= 0;
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b1000;
 				ALUSrc <= 0;
 			end else if (funct == 6'b000011) begin	//-tony-	funct = 000011 means SRA instruction
-				RegWrite <= 0;
+				RegWrite <= 1;
 				MemToReg <= 0;
 				MemRead <= 0;
 				MemWrite <= 0;
 				Branch <= 0;
 				RegDst <= 0;
-				ALUOp <= 4'b0000;
+				ALUOp <= 4'b1001;
 				ALUSrc <= 0;
 			end else if (funct == 6'b001000) begin	//-tony-	funct = 001000 means JR instruction
 				RegWrite <= 0;
 				MemToReg <= 0;
 				MemRead <= 0;
 				MemWrite <= 0;
-				Branch <= 0;
+				Branch <= 1;
 				RegDst <= 0;
 				ALUOp <= 4'b0000;
 				ALUSrc <= 0;
