@@ -23,13 +23,9 @@ module adder(
 		end else if (ALUOp == 4'b0100) begin	//-tony- ALUOp = 0100 means OR instruction
 			result <= rs | rt;
 		end else if (ALUOp == 4'b0101) begin	//-tony- ALUOp = 0101 means NOR instruction
-			result <= rs ^~ rt;
+			result <= ~(rs | rt);
 		end else if (ALUOp == 4'b0110) begin	//-tony- ALUOp = 0110 means SLT instruction
-			if (rs < rt) begin
-				result <= 1;
-			end else begin
-				result <= 0;
-			end
+			result <= (rs < rt) ? 1:0;
 		end else if (ALUOp == 4'b0111) begin	//-tony-	ALUOp = 0111 means SLL function
 			result <= rt << shamt;
 		end else if (ALUOp == 4'b1000) begin	//-tony-	ALUOp = 1000 means SRL function

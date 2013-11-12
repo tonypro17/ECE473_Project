@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RegFile
-Tue Nov 12 16:18:02 2013
+Tue Nov 12 16:39:03 2013
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -56,13 +56,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 12 16:18:01 2013           ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 16:39:03 2013           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; RegFile                                         ;
 ; Top-level Entity Name              ; RegFile                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 4,345                                           ;
-;     Total combinational functions  ; 3,351                                           ;
+; Total logic elements               ; 4,313                                           ;
+;     Total combinational functions  ; 3,345                                           ;
 ;     Dedicated logic registers      ; 1,368                                           ;
 ; Total registers                    ; 1368                                            ;
 ; Total pins                         ; 110                                             ;
@@ -221,16 +221,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 4,345                        ;
+; Estimated Total logic elements              ; 4,313                        ;
 ;                                             ;                              ;
-; Total combinational functions               ; 3351                         ;
+; Total combinational functions               ; 3345                         ;
 ; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 2648                         ;
-;     -- 3 input functions                    ; 431                          ;
-;     -- <=2 input functions                  ; 272                          ;
+;     -- 4 input functions                    ; 2615                         ;
+;     -- 3 input functions                    ; 429                          ;
+;     -- <=2 input functions                  ; 301                          ;
 ;                                             ;                              ;
 ; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 3214                         ;
+;     -- normal mode                          ; 3208                         ;
 ;     -- arithmetic mode                      ; 137                          ;
 ;                                             ;                              ;
 ; Total registers                             ; 1368                         ;
@@ -242,8 +242,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0                            ;
 ; Maximum fan-out node                        ; mux_21_1bit:clocksel_mux|out ;
 ; Maximum fan-out                             ; 1333                         ;
-; Total fan-out                               ; 17265                        ;
-; Average fan-out                             ; 3.53                         ;
+; Total fan-out                               ; 17159                        ;
+; Average fan-out                             ; 3.51                         ;
 +---------------------------------------------+------------------------------+
 
 
@@ -252,10 +252,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
-; |RegFile                                  ; 3351 (1)          ; 1368 (0)     ; 65536       ; 0            ; 0       ; 0         ; 110  ; 0            ; |RegFile                                                                                ; work         ;
+; |RegFile                                  ; 3345 (1)          ; 1368 (0)     ; 65536       ; 0            ; 0       ; 0         ; 110  ; 0            ; |RegFile                                                                                ; work         ;
 ;    |LCD_Display:LCD_module|               ; 860 (860)         ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|LCD_Display:LCD_module                                                         ; work         ;
-;    |RegModule:reg_file|                   ; 95 (95)           ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|RegModule:reg_file                                                             ; work         ;
-;    |adder:ALU|                            ; 614 (614)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|adder:ALU                                                                      ; work         ;
+;    |RegModule:reg_file|                   ; 116 (116)         ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|RegModule:reg_file                                                             ; work         ;
+;    |adder:ALU|                            ; 587 (587)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|adder:ALU                                                                      ; work         ;
 ;    |addtoled:variableadd_selector|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|addtoled:variableadd_selector                                                  ; work         ;
 ;    |basic_mux31:forward_mux_rs|           ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|basic_mux31:forward_mux_rs                                                     ; work         ;
 ;    |basic_mux31:forward_mux_rt|           ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RegFile|basic_mux31:forward_mux_rt                                                     ; work         ;
@@ -422,7 +422,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Synchronous Load   ; 23    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1088  ;
+; Number of registers using Clock Enable       ; 1093  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -432,87 +432,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; RegModule:reg_file|register[25][3]      ; 3       ;
-; RegModule:reg_file|register[29][3]      ; 3       ;
-; RegModule:reg_file|register[26][3]      ; 3       ;
-; RegModule:reg_file|register[30][3]      ; 3       ;
-; RegModule:reg_file|register[24][3]      ; 3       ;
-; RegModule:reg_file|register[28][3]      ; 3       ;
-; RegModule:reg_file|register[27][3]      ; 3       ;
-; RegModule:reg_file|register[31][3]      ; 3       ;
-; RegModule:reg_file|register[9][3]       ; 3       ;
-; RegModule:reg_file|register[10][3]      ; 3       ;
-; RegModule:reg_file|register[8][3]       ; 4       ;
-; RegModule:reg_file|register[11][3]      ; 3       ;
-; RegModule:reg_file|register[14][3]      ; 3       ;
-; RegModule:reg_file|register[13][3]      ; 3       ;
-; RegModule:reg_file|register[12][3]      ; 3       ;
-; RegModule:reg_file|register[15][3]      ; 3       ;
-; RegModule:reg_file|register[21][2]      ; 3       ;
-; RegModule:reg_file|register[29][2]      ; 3       ;
-; RegModule:reg_file|register[22][2]      ; 3       ;
-; RegModule:reg_file|register[30][2]      ; 3       ;
-; RegModule:reg_file|register[20][2]      ; 3       ;
-; RegModule:reg_file|register[28][2]      ; 3       ;
-; RegModule:reg_file|register[23][2]      ; 3       ;
-; RegModule:reg_file|register[31][2]      ; 3       ;
-; RegModule:reg_file|register[6][2]       ; 3       ;
-; RegModule:reg_file|register[5][2]       ; 3       ;
-; RegModule:reg_file|register[4][2]       ; 4       ;
-; RegModule:reg_file|register[7][2]       ; 3       ;
-; RegModule:reg_file|register[14][2]      ; 3       ;
-; RegModule:reg_file|register[13][2]      ; 3       ;
-; RegModule:reg_file|register[12][2]      ; 3       ;
-; RegModule:reg_file|register[15][2]      ; 3       ;
-; RegModule:reg_file|register[26][1]      ; 3       ;
-; RegModule:reg_file|register[22][1]      ; 3       ;
-; RegModule:reg_file|register[18][1]      ; 3       ;
-; RegModule:reg_file|register[30][1]      ; 3       ;
-; RegModule:reg_file|register[23][1]      ; 3       ;
-; RegModule:reg_file|register[27][1]      ; 3       ;
-; RegModule:reg_file|register[19][1]      ; 3       ;
-; RegModule:reg_file|register[31][1]      ; 3       ;
-; RegModule:reg_file|register[6][1]       ; 3       ;
-; RegModule:reg_file|register[7][1]       ; 3       ;
-; RegModule:reg_file|register[10][1]      ; 3       ;
-; RegModule:reg_file|register[11][1]      ; 3       ;
-; RegModule:reg_file|register[2][1]       ; 4       ;
-; RegModule:reg_file|register[3][1]       ; 3       ;
-; RegModule:reg_file|register[14][1]      ; 3       ;
-; RegModule:reg_file|register[15][1]      ; 3       ;
-; RegModule:reg_file|register[22][4]      ; 3       ;
-; RegModule:reg_file|register[26][4]      ; 3       ;
-; RegModule:reg_file|register[18][4]      ; 3       ;
-; RegModule:reg_file|register[30][4]      ; 3       ;
-; RegModule:reg_file|register[25][4]      ; 3       ;
-; RegModule:reg_file|register[21][4]      ; 3       ;
-; RegModule:reg_file|register[17][4]      ; 3       ;
-; RegModule:reg_file|register[29][4]      ; 3       ;
-; RegModule:reg_file|register[20][4]      ; 3       ;
-; RegModule:reg_file|register[24][4]      ; 3       ;
-; RegModule:reg_file|register[16][4]      ; 4       ;
-; RegModule:reg_file|register[28][4]      ; 3       ;
-; RegModule:reg_file|register[27][4]      ; 3       ;
-; RegModule:reg_file|register[23][4]      ; 3       ;
-; RegModule:reg_file|register[19][4]      ; 3       ;
-; RegModule:reg_file|register[31][4]      ; 3       ;
-; RegModule:reg_file|register[21][0]      ; 3       ;
-; RegModule:reg_file|register[25][0]      ; 3       ;
-; RegModule:reg_file|register[17][0]      ; 3       ;
-; RegModule:reg_file|register[29][0]      ; 3       ;
-; RegModule:reg_file|register[23][0]      ; 3       ;
-; RegModule:reg_file|register[27][0]      ; 3       ;
-; RegModule:reg_file|register[19][0]      ; 3       ;
-; RegModule:reg_file|register[31][0]      ; 3       ;
-; RegModule:reg_file|register[5][0]       ; 3       ;
-; RegModule:reg_file|register[7][0]       ; 3       ;
-; RegModule:reg_file|register[9][0]       ; 3       ;
-; RegModule:reg_file|register[11][0]      ; 3       ;
-; RegModule:reg_file|register[1][0]       ; 4       ;
-; RegModule:reg_file|register[3][0]       ; 3       ;
-; RegModule:reg_file|register[13][0]      ; 3       ;
-; RegModule:reg_file|register[15][0]      ; 3       ;
-; Total number of inverted registers = 80 ;         ;
+; RegModule:reg_file|register[1][11]      ; 3       ;
+; RegModule:reg_file|register[1][15]      ; 3       ;
+; RegModule:reg_file|register[1][19]      ; 3       ;
+; RegModule:reg_file|register[1][23]      ; 3       ;
+; RegModule:reg_file|register[1][27]      ; 3       ;
+; RegModule:reg_file|register[1][31]      ; 3       ;
+; RegModule:reg_file|register[2][3]       ; 3       ;
+; RegModule:reg_file|register[1][7]       ; 3       ;
+; RegModule:reg_file|register[1][10]      ; 3       ;
+; RegModule:reg_file|register[1][26]      ; 3       ;
+; RegModule:reg_file|register[1][6]       ; 3       ;
+; RegModule:reg_file|register[1][22]      ; 3       ;
+; RegModule:reg_file|register[1][14]      ; 3       ;
+; RegModule:reg_file|register[1][30]      ; 3       ;
+; RegModule:reg_file|register[1][18]      ; 3       ;
+; RegModule:reg_file|register[2][5]       ; 3       ;
+; RegModule:reg_file|register[1][5]       ; 3       ;
+; RegModule:reg_file|register[1][21]      ; 3       ;
+; RegModule:reg_file|register[1][9]       ; 3       ;
+; RegModule:reg_file|register[1][25]      ; 3       ;
+; RegModule:reg_file|register[1][13]      ; 3       ;
+; RegModule:reg_file|register[1][29]      ; 3       ;
+; RegModule:reg_file|register[1][1]       ; 3       ;
+; RegModule:reg_file|register[1][17]      ; 3       ;
+; RegModule:reg_file|register[2][4]       ; 3       ;
+; RegModule:reg_file|register[1][12]      ; 3       ;
+; RegModule:reg_file|register[1][16]      ; 3       ;
+; RegModule:reg_file|register[1][24]      ; 3       ;
+; RegModule:reg_file|register[1][20]      ; 3       ;
+; RegModule:reg_file|register[1][28]      ; 3       ;
+; RegModule:reg_file|register[1][8]       ; 3       ;
+; Total number of inverted registers = 31 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -521,80 +472,56 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 4:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[31][9]       ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[30][20]      ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[29][7]       ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[28][14]      ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[27][7]       ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[26][30]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[25][22]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[24][12]      ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[23][12]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[22][12]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[21][12]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[20][7]       ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[19][11]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[18][27]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[17][11]      ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[16][14]      ;
-; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[15][22]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[14][22]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[13][19]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[12][29]      ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[11][29]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[10][29]      ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[9][29]       ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[8][29]       ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[7][29]       ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[6][29]       ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[5][4]        ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[4][16]       ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[3][9]        ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[2][26]       ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[1][9]        ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[0][6]        ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |RegFile|pipereg:ID_EX|out2[6]                    ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |RegFile|pipereg:ID_EX|out1[15]                   ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |RegFile|adder:ALU|result[9]                      ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |RegFile|adder:ALU|result[20]                     ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; Yes        ; |RegFile|adder:ALU|result[5]                      ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; Yes        ; |RegFile|adder:ALU|result[26]                     ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |RegFile|adder:ALU|result[3]                      ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |RegFile|adder:ALU|result[28]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[31][3]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[30][31]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[29][8]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[28][5]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[27][20]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[26][29]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[25][31]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[24][1]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[23][1]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[22][19]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[21][15]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[20][24]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[19][6]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[18][5]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[17][0]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[16][8]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[15][0]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[14][6]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[13][28]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[12][31]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[11][26]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[10][30]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[9][27]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[8][13]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[7][26]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[6][23]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[5][21]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[4][6]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[3][30]       ;
+; 4:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[2][30]       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[1][3]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[0][17]       ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |RegFile|pipereg:ID_EX|out2[5]                    ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |RegFile|pipereg:ID_EX|out1[9]                    ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |RegFile|adder:ALU|result[13]                     ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |RegFile|adder:ALU|result[16]                     ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; Yes        ; |RegFile|adder:ALU|result[6]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; Yes        ; |RegFile|adder:ALU|result[27]                     ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |RegFile|adder:ALU|result[2]                      ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |RegFile|adder:ALU|result[29]                     ;
 ; 22:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; Yes        ; |RegFile|adder:ALU|result[31]                     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[31][2]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[30][1]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[29][3]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[28][2]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[27][0]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[26][1]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[25][3]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[24][4]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[23][2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[22][2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[21][2]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[20][2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[19][1]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[18][4]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[17][4]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[15][2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[14][3]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[13][2]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[12][2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[11][1]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[10][1]       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[9][0]        ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[7][1]        ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[6][2]        ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[5][2]        ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[3][0]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |RegFile|LCD_Display:LCD_module|DATA_BUS_VALUE[4] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |RegFile|RegModule:reg_file|register[2][3]        ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |RegFile|RegModule:reg_file|register[1][1]        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |RegFile|LCD_Display:LCD_module|DATA_BUS_VALUE[5] ;
 ; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |RegFile|LCD_Display:LCD_module|state             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |RegFile|hexdigit:PC0|out[6]                      ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |RegFile|LCD_Display:LCD_module|next_command      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RegFile|basic_mux31:forward_mux_rt|out[29]       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RegFile|basic_mux31:forward_mux_rs|out[6]        ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RegFile|addtoled:variableadd_selector|addout[3]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RegFile|basic_mux31:forward_mux_rt|out[19]       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RegFile|basic_mux31:forward_mux_rs|out[29]       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RegFile|addtoled:variableadd_selector|addout[4]  ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RegFile|control:control_module|ALUOp             ;
 ; 304:1              ; 4 bits    ; 808 LEs       ; 768 LEs              ; 40 LEs                 ; No         ; |RegFile|LCD_Display:LCD_module|Mux1              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
@@ -796,7 +723,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 12 16:17:45 2013
+    Info: Processing started: Tue Nov 12 16:38:47 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegFile -c RegFile
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file lcd_display.vhd
@@ -949,7 +876,7 @@ Info (10041): Inferred latch for "RegWrite" at control.v(23)
 Info (12128): Elaborating entity "pipereg" for hierarchy "pipereg:IF_ID"
 Info (12128): Elaborating entity "basic_mux31" for hierarchy "basic_mux31:forward_mux_rs"
 Info (12128): Elaborating entity "RegModule" for hierarchy "RegModule:reg_file"
-Warning (10235): Verilog HDL Always Construct warning at RegModule.v(48): variable "read_address_debug" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at RegModule.v(50): variable "read_address_debug" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Info (12128): Elaborating entity "wb_control_pipe" for hierarchy "wb_control_pipe:wb_control_pipe_3"
 Info (12128): Elaborating entity "ramlpm" for hierarchy "ramlpm:data_mem"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ramlpm:data_mem|altsyncram:altsyncram_component"
@@ -1123,15 +1050,15 @@ Info (17049): 48 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Tony/Documents/GitHub/ECE473_Project/output_files/RegFile.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4563 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4531 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 89 output pins
-    Info (21061): Implemented 4389 logic cells
+    Info (21061): Implemented 4357 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 83 warnings
-    Info: Peak virtual memory: 516 megabytes
-    Info: Processing ended: Tue Nov 12 16:18:02 2013
-    Info: Elapsed time: 00:00:17
+    Info: Peak virtual memory: 523 megabytes
+    Info: Processing ended: Tue Nov 12 16:39:03 2013
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:16
 
 

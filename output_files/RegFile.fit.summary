@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Nov 12 16:18:46 2013
+Fitter Status : Successful - Tue Nov 12 16:39:47 2013
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : RegFile
 Top-level Entity Name : RegFile
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 3,916 / 33,216 ( 12 % )
-    Total combinational functions : 3,352 / 33,216 ( 10 % )
+Total logic elements : 3,819 / 33,216 ( 11 % )
+    Total combinational functions : 3,346 / 33,216 ( 10 % )
     Dedicated logic registers : 1,368 / 33,216 ( 4 % )
 Total registers : 1368
 Total pins : 110 / 475 ( 23 % )
