@@ -2697,7 +2697,7 @@ applicable agreement for further details.
 		(pt 168 32)
 		(output)
 		(text "out[4..0]" (rect 0 0 41 10)(font "Arial" ))
-		(text "out[4..0]" (rect 113 27 154 37)(font "Arial" ))
+		(text "out[4..0]" (rect 113 27 147 37)(font "Arial" ))
 		(line (pt 168 32)(pt 152 32)(line_width 3))
 	)
 	(drawing
@@ -2733,7 +2733,7 @@ applicable agreement for further details.
 		(pt 176 32)
 		(output)
 		(text "out[31..0]" (rect 0 0 47 10)(font "Arial" ))
-		(text "out[31..0]" (rect 116 27 163 37)(font "Arial" ))
+		(text "out[31..0]" (rect 116 27 155 37)(font "Arial" ))
 		(line (pt 176 32)(pt 160 32)(line_width 3))
 	)
 	(drawing
@@ -4048,12 +4048,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "rs_out[31..0]" (rect -1463 248 -1401 258)(font "Arial" ))
-	(pt -1392 264)
-	(pt -1440 264)
-	(bus)
-)
-(connector
 	(text "jump" (rect -1464 264 -1441 274)(font "Arial" ))
 	(pt -1392 280)
 	(pt -1440 280)
@@ -4078,6 +4072,12 @@ applicable agreement for further details.
 (connector
 	(pt 384 176)
 	(pt -136 176)
+)
+(connector
+	(text "rs[31..0]" (rect -1463 248 -1422 258)(font "Arial" ))
+	(pt -1392 264)
+	(pt -1440 264)
+	(bus)
 )
 (junction (pt 1472 912))
 (junction (pt 1472 968))

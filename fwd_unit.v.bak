@@ -17,17 +17,17 @@ module fwd_unit(
 	always @* begin
 			forward_rs = 2'b00;
 			forward_rt = 2'b00;
-		if (mem_wb_regwrite == 1 && mem_wb_rd == id_ex_rs) begin
-			forward_rs = 2'b10;
-		end
-		if (mem_wb_regwrite == 1 && mem_wb_rd == id_ex_rt) begin
-			forward_rt = 2'b10;
-		end
 		if (ex_mem_regwrite == 1 && ex_mem_rd == id_ex_rs) begin
 			forward_rs = 2'b01;
 		end
 		if (ex_mem_regwrite == 1 && ex_mem_rd == id_ex_rt) begin
 			forward_rt = 2'b01;
+		end
+		if (mem_wb_regwrite == 1 && mem_wb_rd == id_ex_rs) begin
+			forward_rs = 2'b10;
+		end
+		if (mem_wb_regwrite == 1 && mem_wb_rd == id_ex_rt) begin
+			forward_rt = 2'b10;
 		end
 	end
 
