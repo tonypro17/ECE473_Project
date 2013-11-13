@@ -1,0 +1,20 @@
+
+
+// file RegDst_mux.v
+
+
+module RegDst_mux(
+	input wire [4:0] rs,
+	input wire [4:0] rt,
+	input wire [4:0] sel,
+	output reg [4:0] out);
+	
+	always @* begin
+		if (sel == 0) begin
+			out <= rs;
+		end else if (sel == 1) begin
+			out <= rt;
+		end
+	end
+endmodule
+
