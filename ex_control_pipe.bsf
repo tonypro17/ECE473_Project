@@ -47,9 +47,9 @@ applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "Jump" (rect 0 0 22 12)(font "Arial" ))
-		(text "Jump" (rect 21 75 43 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
+		(text "Jump[1..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "Jump[1..0]" (rect 21 75 62 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 0 96)
@@ -82,9 +82,9 @@ applicable agreement for further details.
 	(port
 		(pt 216 80)
 		(output)
-		(text "Jump_o" (rect 0 0 33 12)(font "Arial" ))
-		(text "Jump_o" (rect 162 75 195 87)(font "Arial" ))
-		(line (pt 216 80)(pt 200 80)(line_width 1))
+		(text "Jump_o[1..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "Jump_o[1..0]" (rect 144 75 195 87)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 200 128)(line_width 1))

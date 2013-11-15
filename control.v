@@ -7,6 +7,8 @@
 module control(
 	input wire [5:0] opcode,
 	input wire [5:0] funct,
+	input wire [4:0] rs,					//-IAN- added rs and rd inputs for jump instruction forwarding
+	input wire [4:0] previous_rd,
 	
 	output reg RegWrite,
 	output reg MemToReg,
@@ -16,7 +18,7 @@ module control(
 	output reg RegDst,
 	output reg [3:0] ALUOp,
 	output reg ALUSrc,
-	output reg Jump);
+	output reg [1:0] Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
 	
 	always @* begin
 	
@@ -66,7 +68,9 @@ module control(
 				RegWrite <= 1;
 				ALUOp <= 4'b1001;
 			end else if (funct == 6'b001000) begin	//-tony-	funct = 001000 means JR instruction
-				Jump <= 1;
+				if (rs==previous_rd) begin
+					Jump <=2'b10;							//-IAN- jump with forwarding
+				end else Jump <=2'b01;					//-IAN- jump with NO forwarding
 		end
 	end
 end	
