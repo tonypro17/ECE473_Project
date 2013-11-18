@@ -73,6 +73,45 @@ module control(
 				end else Jump <=2'b01;					//-IAN- jump with NO forwarding
 		end
 	end
-end	
 	
+	
+/*
+
+			//check opcode
+			if( opcode == 6'b       ) begin 
+				RegWrite = 0;
+				MemToReg = 0;
+				MemRead = 0;
+				MemWrite = 0;
+				Branch = 0;
+				RegDst = 0;
+				ALUOp = 4'b0000;
+				ALUSrc = 0;
+				Jump = 0;
+			
+			// check function code
+			if(funct == 6'b001100) begin 				//-IAN- andi function
+			end else if (funct == 6'b001101)					//-IAN- ori function
+			end else if (funct == 6'b001010)					//-IAN- slti
+			end else if (funct == 6'b001000)					//-IAN- addi
+			end else if (funct == 6'b001001)					//-IAN- addiu
+			end else if (funct == 6'b000100)					//-IAN- beq
+			end else if (funct == 6'b000101)					//-IAN- bne
+			end else if (funct == 6'b000111)					//-IAN- bgtz
+			end else if (funct == 6'b000001)					//-IAN- bgez
+			end else if (funct == 6'b100011)					//-IAN- lw
+			end else if (funct == 6'b101011)					//-IAN- sw
+			end else if (funct == 6'b001111)					//-IAN- lui
+
+
+			end else if (funct == 6'b000010)					//-IAN- j
+			end else if (funct == 6'b000011)					//-IAN- jal
+			
+end
+
+
+
+*/
+
+		
 endmodule
