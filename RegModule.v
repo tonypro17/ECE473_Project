@@ -36,6 +36,8 @@ always @(negedge clock) begin
 		for (i = 0; i<32; i=i+1) begin
 			register[i] = i;
 		end
+		register[1] = 32'hFFFFFFE2;				//-IAN- added so registers 1&2 will initiate to test program
+		register[2] = 32'h00000038;				// initial values when reset button is pushed
 	end else if (WriteEnable == 1) begin
 		register[rd] = write_data_in;
 	end
