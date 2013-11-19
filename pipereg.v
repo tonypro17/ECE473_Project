@@ -13,12 +13,14 @@ module pipereg (
 	input wire [4:0] rsin,
 	input wire [4:0] rtin,
 	input wire [4:0] shamt_in,
+	input wire [31:0] imm_in,
 	output reg [31:0] out1,
 	output reg [31:0] out2,
 	output reg [4:0] rdout,
 	output reg [4:0] rsout,
 	output reg [4:0] rtout,
-	output reg [4:0] shamt_out);
+	output reg [4:0] shamt_out,
+	output reg [31:0] imm_out);
 	
 	always @(posedge clock) begin
 		if (reset == 1) begin
@@ -35,6 +37,7 @@ module pipereg (
 			rsout <= rsin;
 			rtout <= rtin;
 			shamt_out <= shamt_in;
+			imm_out <= imm_in;
 		end
 	end
 	

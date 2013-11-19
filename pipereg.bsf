@@ -87,6 +87,13 @@ applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "imm_in[31..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "imm_in[31..0]" (rect 21 171 74 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
 		(pt 224 32)
 		(output)
 		(text "out1[31..0]" (rect 0 0 38 12)(font "Arial" ))
@@ -127,6 +134,13 @@ applicable agreement for further details.
 		(text "shamt_out[4..0]" (rect 0 0 63 12)(font "Arial" ))
 		(text "shamt_out[4..0]" (rect 140 107 203 119)(font "Arial" ))
 		(line (pt 224 112)(pt 208 112)(line_width 3))
+	)
+	(port
+		(pt 224 128)
+		(output)
+		(text "imm_out[31..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "imm_out[31..0]" (rect 144 123 203 135)(font "Arial" ))
+		(line (pt 224 128)(pt 208 128)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 208 192)(line_width 1))

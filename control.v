@@ -70,7 +70,54 @@ module control(
 			end else if (funct == 6'b001000) begin	//-tony-	funct = 001000 means JR instruction
 				if (rs==previous_rd) begin
 					Jump <=2'b10;							//-IAN- jump with forwarding
-				end else Jump <=2'b01;					//-IAN- jump with NO forwarding
+				end else begin
+					Jump <=2'b01;					//-IAN- jump with NO forwarding
+				end
+			end
+			
+		end else if (opcode == 6'b001100) begin // tony: 001100 = andi
+			ALUSrc <= 1;
+			ALUOp <= 4'b0011;
+			RegWrite <= 1;
+			RegDst <= 1;
+		end else if (opcode == 6'b001101) begin // tony: 001101 = ori
+			ALUSrc <= 1;
+			ALUOp <= 4'b0100;
+			RegWrite <= 1;
+			RegDst <= 1;
+		end else if (opcode == 6'b001010) begin // tony: 001010 = slti
+			ALUSrc <= 1;
+			ALUOp <= 4'b0110;
+			RegWrite <= 1;
+			RegDst <= 1;
+		end else if (opcode == 6'b001000) begin // tony: 001000 = addi
+			ALUSrc <= 1;
+			ALUOp <= 4'b0001;
+			RegWrite <= 1;
+			RegDst <= 1;
+		end else if (opcode == 6'b001001) begin // tony: 001001 = addiu
+			ALUSrc <=1;
+			ALUOp <= 4'b1010;
+			RegWrite <= 1;
+			RegDst <= 1;
+		end else if (opcode == 6'b000100) begin // tony: 000100 = beq
+			ALUOp <= 4'b0010; //tony: send subtract operation to alu
+			Branch <= 1;
+		end else if (opcode == 6'b000101) begin // tony: 000101 = bne
+			ALUOp <= 4'b1110;
+			Branch <= 1;
+		end else if (opcode == 6'b000111) begin // tony: 000111 = bgtz	
+			ALUOp <= 4'b1100;
+			Branch <= 1;
+		end else if (opcode == 6'b000001) begin // tony: 000001 = bgez
+			ALUOp <= 4'b1101;
+			Branch <= 1;
+		end else if (opcode == 6'b100011) begin // tony: 100011 = lw
+		
+		end else if (opcode == 6'b101011) begin // tony: 101011 = sw
+		
+		end else if (opcode == 6'b001111) begin // tony: 001111 = lui
+		
 		end
 	end
 	

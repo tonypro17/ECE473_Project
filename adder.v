@@ -23,6 +23,9 @@ module adder(
 			result <= rs_unsigned + rt_unsigned;
 		end else if (ALUOp == 4'b0010) begin 	// -IAN-	ALUOp = 0010 means SUB instruction
 			result <= rs - rt;
+			if (result == 0) begin
+				zero <= 1;
+			end	
 		end else if (ALUOp == 4'b1011) begin 	// -IAN-	ALUOp = 1011 means SUBU instruction
 			result <= rs_unsigned - rt_unsigned;
 		end else if (ALUOp == 4'b0011) begin 	// -IAN-	ALUOp = 0011 means AND instruction
@@ -38,8 +41,21 @@ module adder(
 		end else if (ALUOp == 4'b1000) begin	//-tony-	ALUOp = 1000 means SRL function
 			result <= rt >> shamt;
 		end else if (ALUOp == 4'b1001) begin	//-tony-	ALUOp = 1001 means SRA function
-			result <= rt >>> shamt;											
-		end else if (ALUOp == 4'b0000) begin 	//			ALUOp = 0000 means no ALU function
+			result <= rt >>> shamt;
+		end else if (ALUOp == 4'b1100) begin	//tony: 1100 = BGTZ
+			if (rs > 0) begin
+				zero <= 1;
+			end
+		end else if (ALUOp == 4'b1101) begin	// tony: 1101 = BGEZ
+			if (rs >= 0) begin
+				zero <= 1;
+			end
+		end else if (ALUOp == 4'b1110) begin	//tony: 1110 = bne
+			result <= rs - rt;
+			if (result != 0) begin
+				zero <= 1;
+			end
+		end else if (ALUOp == 4'b0000) begin 	//	ALUOp = 0000 means no ALU function
 			result <= 0;
 		end
 			
