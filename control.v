@@ -113,9 +113,16 @@ module control(
 			ALUOp <= 4'b1101;
 			Branch <= 1;
 		end else if (opcode == 6'b100011) begin // tony: 100011 = lw
-		
+			ALUOp <= 4'b0001;
+			ALUSrc <= 1;
+			RegWrite <= 1;
+			RegDst <= 1;
+			MemRead <= 1;
+			MemToReg <= 1;
 		end else if (opcode == 6'b101011) begin // tony: 101011 = sw
-		
+			ALUOp <= 4'b0001;
+			ALUSrc <= 1;
+			MemWrite <= 1;
 		end else if (opcode == 6'b001111) begin // tony: 001111 = lui
 		
 		end
