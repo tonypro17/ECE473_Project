@@ -32,7 +32,7 @@ end
 always @(negedge clock) begin
 	if (reset == 1) begin
 		for (i = 0; i<32; i=i+1) begin
-			register[i] = i;
+			register[i] = 0;
 		end
 	end else if (WriteEnable == 1) begin
 		register[rd] = write_data_in;

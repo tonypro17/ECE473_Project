@@ -1,5 +1,5 @@
 Flow report for RegFile
-Wed Nov 20 13:16:35 2013
+Wed Nov 20 16:15:31 2013
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Wed Nov 20 13:16:35 2013          ;
+; Flow Status                        ; Successful - Wed Nov 20 16:15:31 2013           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; RegFile                                         ;
 ; Top-level Entity Name              ; RegFile                                         ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 4,146 / 33,216 ( 12 % )                         ;
+;     Total combinational functions  ; 3,605 / 33,216 ( 11 % )                         ;
+;     Dedicated logic registers      ; 1,478 / 33,216 ( 4 % )                          ;
+; Total registers                    ; 1478                                            ;
+; Total pins                         ; 110 / 475 ( 23 % )                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 65,536 / 483,840 ( 14 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/20/2013 13:16:33 ;
+; Start date & time ; 11/20/2013 16:12:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RegFile             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 159320643599338.138497139310822       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 8796757419259.138498195903936         ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ROM: 2-PORT                           ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --         ;
@@ -96,29 +96,44 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 370 MB              ; 00:00:03                           ;
-; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:28     ; 1.0                     ; 365 MB              ; 00:00:27                           ;
+; Fitter                    ; 00:01:33     ; 1.0                     ; 489 MB              ; 00:01:30                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 336 MB              ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 319 MB              ; 00:00:06                           ;
+; MIF/HEX Update            ; 00:00:04     ; 1.0                     ; 341 MB              ; 00:00:03                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 340 MB              ; 00:00:06                           ;
+; Total                     ; 00:02:26     ; --                      ; --                  ; 00:02:19                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+----------------------+------------------+------------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
-+----------------------+------------------+------------------+------------+----------------+
-; Analysis & Synthesis ; atlas            ; Debian GNU/Linux ; 7          ; x86_64         ;
-+----------------------+------------------+------------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
+; Fitter                    ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
+; Assembler                 ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
+; TimeQuest Timing Analyzer ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
+; MIF/HEX Update            ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
+; Assembler                 ; universi-558b08  ; Windows XP ; 5.1        ; i686           ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off RegFile -c RegFile
+quartus_fit --read_settings_files=off --write_settings_files=off RegFile -c RegFile
+quartus_asm --read_settings_files=off --write_settings_files=off RegFile -c RegFile
+quartus_sta RegFile -c RegFile
+quartus_cdb RegFile -c RegFile --update_mif
+quartus_asm --read_settings_files=on --write_settings_files=off RegFile -c RegFile
 
 
 
