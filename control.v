@@ -21,18 +21,17 @@ module control(
 	output reg [1:0] Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
 	
 	always @* begin
-	
+		RegWrite = 0;
+		MemToReg = 0;
+		MemRead = 0;
+		MemWrite = 0;
+		Branch = 0;
+		RegDst = 0;
+		ALUOp = 4'b0000;
+		ALUSrc = 0;
+		Jump = 2'b00;
 		// check opcode
 		if (opcode == 6'b000000) begin 				//			opcode = 0 means R-CODE instruction
-				RegWrite = 0;
-				MemToReg = 0;
-				MemRead = 0;
-				MemWrite = 0;
-				Branch = 0;
-				RegDst = 0;
-				ALUOp = 4'b0000;
-				ALUSrc = 0;
-				Jump = 0;
 			// check function code
 			if (funct == 6'b100000) begin 			//			funct = 100000 means ADD instruction
 				RegWrite <= 1;
