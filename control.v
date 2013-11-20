@@ -123,6 +123,10 @@ module control(
 			ALUSrc <= 1;
 			MemWrite <= 1;
 		end else if (opcode == 6'b001111) begin // tony: 001111 = lui
+			ALUOp <= 4'b1111;
+			ALUSrc <= 1;
+			RegWrite <= 1;
+			RegDst <= 1;
 		
 		end
 	end

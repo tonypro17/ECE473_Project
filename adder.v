@@ -42,6 +42,8 @@ module adder(
 			result <= rt >> shamt;
 		end else if (ALUOp == 4'b1001) begin	//-tony-	ALUOp = 1001 means SRA function
 			result <= rt >>> shamt;
+		end else if (ALUOp == 4'b1111) begin	//-IAN-	ALUOp = 1111 means lui function
+			result <= rt << 16;	
 		end else if (ALUOp == 4'b1100) begin	//tony: 1100 = BGTZ
 			if (rs > 0) begin
 				zero <= 1;
