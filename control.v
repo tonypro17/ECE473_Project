@@ -128,6 +128,9 @@ module control(
 			RegWrite <= 1;
 			RegDst <= 1;
 		
+		end else if (opcode == 6'b000011) begin //-IAN- 000011 = jal 
+			Jump <= 11; 								 //-IAN- jump with link
+		
 		end
 	end
 		

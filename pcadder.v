@@ -19,7 +19,7 @@ module pcadder (
 	always @(posedge clock) begin
 		if (reset == 1) begin
 			pc_4 = 0;
-		end else if (jump == 2'b01) begin			//-IAN-  added for jump instruction,  removed PC mux
+		end else if (jump == 2'b01 || jump == 2'b11) begin	//-IAN-  added for jump instruction,  removed PC mux
 			pc_4 = jump_add;
 		end else if (jump == 2'b10) begin
 			pc_4 = jump_forward_add;

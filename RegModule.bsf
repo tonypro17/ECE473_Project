@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 312 224)
+	(rect 16 16 312 256)
 	(text "RegModule" (rect 5 0 51 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -87,6 +87,27 @@ applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "Jump[1..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "Jump[1..0]" (rect 21 171 62 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "pc_address[31..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "pc_address[31..0]" (rect 21 187 91 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "J_type_add[25..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "J_type_add[25..0]" (rect 21 203 94 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
 		(pt 296 32)
 		(output)
 		(text "rs_out[31..0]" (rect 0 0 49 12)(font "Arial" ))
@@ -108,6 +129,6 @@ applicable agreement for further details.
 		(line (pt 296 64)(pt 280 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 280 192)(line_width 1))
+		(rectangle (rect 16 16 280 224)(line_width 1))
 	)
 )
