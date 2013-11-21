@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Nov 21 16:58:15 2013
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : RegFile
+Top-level Entity Name : RegFile
+Family : Cyclone II
+Total logic elements : 4,805
+    Total combinational functions : 3,797
+    Dedicated logic registers : 1,508
+Total registers : 1508
+Total pins : 110
+Total virtual pins : 0
+Total memory bits : 65,536
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
