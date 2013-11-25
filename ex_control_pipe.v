@@ -19,6 +19,14 @@ module ex_control_pipe (
 	output reg [1:0] Jump_o,
 	output reg J_Jump_o);
 	
+initial begin
+	RegDst_o = 0;
+	ALUOp_o = 4'b0000;
+	ALUSrc_o = 0;
+	Jump_o = 2'b00;
+	J_Jump_o = 0;
+end
+	
 always @(posedge clk) begin
 	RegDst_o <= RegDst;
 	ALUOp_o <= ALUOp;

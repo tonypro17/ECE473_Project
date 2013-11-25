@@ -16,14 +16,14 @@ module adder(
 	
 	
 	always @(negedge clock) begin			  		// -IAN-	changed to clock on NEGEDGE 
-		zero <= 0;
+		zero = 0;
 		if (ALUOp == 4'b0001) begin 			  	//			ALUOp = 0001 means ADD instruction
 			result <= rs + rt;
 		end else if (ALUOp == 4'b1010) begin 	// -IAN-	ALUOp = 1010 means ADDU instruction
 			result <= rs_unsigned + rt_unsigned;
 		end else if (ALUOp == 4'b0010) begin 	// -IAN-	ALUOp = 0010 means SUB instruction
-			result <= rs - rt;
-			if (result == 0) begin
+			result <= 0;
+			if (rs - rt == 0) begin
 				zero <= 1;
 			end	
 		end else if (ALUOp == 4'b1011) begin 	// -IAN-	ALUOp = 1011 means SUBU instruction
@@ -53,14 +53,13 @@ module adder(
 				zero <= 1;
 			end
 		end else if (ALUOp == 4'b1110) begin	//tony: 1110 = bne
-			result <= rs - rt;
-			if (result != 0) begin
+			result <= 0;
+			if (rs - rt != 0) begin
 				zero <= 1;
 			end
 		end else if (ALUOp == 4'b0000) begin 	//	ALUOp = 0000 means no ALU function
 			result <= 0;
-		end
-			
+		end		
 	end
 	
 endmodule

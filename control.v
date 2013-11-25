@@ -21,6 +21,19 @@ module control(
 	output reg [1:0] Jump,
 	output reg J_Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
 	
+	initial begin
+		RegWrite = 0;
+		MemToReg = 0;
+		MemRead = 0;
+		MemWrite = 0;
+		Branch = 0;
+		RegDst = 0;
+		ALUOp = 4'b0000;
+		ALUSrc = 0;
+		Jump = 2'b00;
+		J_Jump = 0;
+	end
+	
 	always @* begin
 		RegWrite = 0;
 		MemToReg = 0;

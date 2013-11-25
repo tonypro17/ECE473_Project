@@ -12,6 +12,11 @@ module wb_control_pipe (
 	// outputs
 	output reg RegWrite_o,
 	output reg MemToReg_o);
+
+initial begin
+	RegWrite_o = 0;
+	MemToReg_o = 0;
+end
 	
 always @(posedge clk) begin
 	RegWrite_o <= RegWrite;

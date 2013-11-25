@@ -15,6 +15,12 @@ module mem_control_pipe (
 	output reg MemWrite_o,
 	output reg Branch_o);
 	
+initial begin
+	MemRead_o = 0;
+	MemWrite_o = 0;
+	Branch_o = 0;
+end
+	
 always @(posedge clk) begin
 	MemRead_o <= MemRead;
 	MemWrite_o <= MemWrite;
