@@ -18,7 +18,8 @@ module control(
 	output reg RegDst,
 	output reg [3:0] ALUOp,
 	output reg ALUSrc,
-	output reg [1:0] Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
+	output reg [1:0] Jump,
+	output reg J_Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
 	
 	always @* begin
 		RegWrite = 0;
@@ -30,6 +31,7 @@ module control(
 		ALUOp = 4'b0000;
 		ALUSrc = 0;
 		Jump = 2'b00;
+		J_Jump = 0;
 		// check opcode
 		if (opcode == 6'b000000) begin 				//			opcode = 0 means R-CODE instruction
 			// check function code
@@ -127,10 +129,10 @@ module control(
 			ALUSrc <= 1;
 			RegWrite <= 1;
 			RegDst <= 1;
-		
 		end else if (opcode == 6'b000011) begin //-IAN- 000011 = jal 
-			Jump <= 11; 								 //-IAN- jump with link
-		
+			Jump <= 2'b11; 							 //-IAN- jump with link
+		end else if (opcode == 6'b000010) begin // tony: 000010 = j
+			J_Jump <= 1'b1;
 		end
 	end
 		

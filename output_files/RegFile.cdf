@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/output_files/") File("RegFile.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("/home/bandit/ECE473_Project/output_files/") File("RegFile.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
