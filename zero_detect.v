@@ -13,22 +13,29 @@ module zero_detect(
 	end
 	
 	always @* begin
-		zero <= 0;
 		if (op == 3'b001) begin //beq
 			if (rs - rt == 0) begin
 				zero <= 1;
+			end else begin
+				zero <= 0;
 			end
 		end else if (op == 3'b010) begin //bne
 			if (rs - rt != 0) begin
 				zero <= 1;
+			end else begin
+				zero <= 0;
 			end
 		end else if (op == 3'b011) begin //bgtz
 			if (rs > 0) begin
 				zero <= 1;
+			end else begin
+				zero <= 0;
 			end
 		end else if (op == 3'b100) begin //bgez
 			if (rs >= 0) begin
 				zero <= 1;
+			end else begin
+				zero <= 0;
 			end
 		end 
 	end

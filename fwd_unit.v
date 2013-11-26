@@ -12,6 +12,9 @@ module fwd_unit(
 	input wire [4:0] mem_wb_rd,
 	input wire mem_wb_regwrite,
 	input wire I_type,
+	input wire [4:0] id_ex_rd,
+	input wire id_ex_regwrite,
+	input wire branch,
 	output reg [1:0] forward_rs,
 	output reg [1:0] forward_rt);
 	
@@ -29,6 +32,12 @@ module fwd_unit(
 		end
 		if (I_type == 0 && ex_mem_regwrite == 1 && ex_mem_rd == id_ex_rt) begin
 			forward_rt = 2'b01;
+		end
+		if (branch == 1 && id_ex_regwrite == 1 && id_ex_rd == id_ex_rs) begin
+			forward_rs = 2'b11;
+		end
+		if (branch == 1 && id_ex_regwrite == 1 && id_ex_rd == id_ex_rt) begin
+			forward_rt = 2'b11;
 		end
 	end
 
