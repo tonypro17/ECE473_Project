@@ -3,11 +3,11 @@
 
 module jump_shifter(
 	input wire [25:0] in,
+	input wire gnd,
 	output reg [27:0] out);
 	
 	always @* begin
-		out = { {2{in[25]}}, in[25:0] };
-		out <= out << 2;
+		out <= {in[25:0], {2{gnd}} };
 	end
 
 endmodule

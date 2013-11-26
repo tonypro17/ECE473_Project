@@ -15,7 +15,7 @@ module adder(
 	output reg zero);
 	
 	
-	always @(negedge clock) begin			  		// -IAN-	changed to clock on NEGEDGE 
+	always @* begin			  		// -IAN-	changed to clock on NEGEDGE 
 		zero = 0;
 		if (ALUOp == 4'b0001) begin 			  	//			ALUOp = 0001 means ADD instruction
 			result <= rs + rt;

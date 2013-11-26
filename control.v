@@ -145,7 +145,7 @@ module control(
 		end else if (opcode == 6'b000011) begin //-IAN- 000011 = jal 
 			Jump <= 2'b11; 							 //-IAN- jump with link
 		end else if (opcode == 6'b000010) begin // tony: 000010 = j
-			J_Jump <= 1'b1;
+			J_Jump <= 1;
 		end
 	end
 		
