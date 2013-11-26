@@ -1,0 +1,14 @@
+
+
+// file zero_detect.v
+
+module zero_detect(
+	input wire [31:0] rs,
+	input wire [31:0] rt,
+	input wire [3:0] op,
+	output reg zero);
+	
+	always @* begin
+		
+		if (rs - rt == 0) begin
+			

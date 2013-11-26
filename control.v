@@ -19,7 +19,8 @@ module control(
 	output reg [3:0] ALUOp,
 	output reg ALUSrc,
 	output reg [1:0] Jump,
-	output reg J_Jump);			//-IAN- changed to 2 bit line to accompany jump With forwarding
+	output reg J_Jump,
+	output reg [2:0] Branch_op);			//-IAN- changed to 2 bit line to accompany jump With forwarding
 	
 	initial begin
 		RegWrite = 0;
@@ -32,6 +33,7 @@ module control(
 		ALUSrc = 0;
 		Jump = 2'b00;
 		J_Jump = 0;
+		Branch_op = 3'b000;
 	end
 	
 	always @* begin
@@ -45,6 +47,7 @@ module control(
 		ALUSrc = 0;
 		Jump = 2'b00;
 		J_Jump = 0;
+		Branch_op = 3'b000;
 		// check opcode
 		if (opcode == 6'b000000) begin 				//			opcode = 0 means R-CODE instruction
 			// check function code
@@ -115,16 +118,16 @@ module control(
 			RegWrite <= 1;
 			RegDst <= 1;
 		end else if (opcode == 6'b000100) begin // tony: 000100 = beq
-			ALUOp <= 4'b0010; //tony: send subtract operation to alu
+			Branch_op <= 3'b001;
 			Branch <= 1;
 		end else if (opcode == 6'b000101) begin // tony: 000101 = bne
-			ALUOp <= 4'b1110;
+			Branch_op <= 3'b010;
 			Branch <= 1;
 		end else if (opcode == 6'b000111) begin // tony: 000111 = bgtz	
-			ALUOp <= 4'b1100;
+			Branch_op <= 3'b011;
 			Branch <= 1;
 		end else if (opcode == 6'b000001) begin // tony: 000001 = bgez
-			ALUOp <= 4'b1101;
+			Branch_op <= 3'b100;
 			Branch <= 1;
 		end else if (opcode == 6'b100011) begin // tony: 100011 = lw
 			ALUOp <= 4'b0001;
