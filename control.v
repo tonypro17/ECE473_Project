@@ -144,6 +144,7 @@ module control(
 			RegDst <= 1;
 		end else if (opcode == 6'b000011) begin //-IAN- 000011 = jal 
 			Jump <= 2'b11; 							 //-IAN- jump with link
+			J_Jump <= 1;
 		end else if (opcode == 6'b000010) begin // tony: 000010 = j
 			J_Jump <= 1;
 		end
