@@ -85,11 +85,10 @@ module control(
 				RegWrite <= 1;
 				ALUOp <= 4'b1001;
 			end else if (funct == 6'b001000) begin	//-tony-	funct = 001000 means JR instruction
-				if (rs==previous_rd) begin
+		/*		if (rs==previous_rd) begin
 					Jump <=2'b10;							//-IAN- jump with forwarding
-				end else begin
+				end else begin */
 					Jump <=2'b01;					//-IAN- jump with NO forwarding
-				end
 			end
 			
 		end else if (opcode == 6'b001100) begin // tony: 001100 = andi

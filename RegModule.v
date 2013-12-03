@@ -47,11 +47,12 @@ always @(negedge clock) begin
 end
 
 always @* begin
-/*	if (Jump == 2'b11) begin					//-IAN- if jal, rs is set to instrut fetch bits [25:0]
-		rs_out <= J_type_add;
-	end else begin  */	
-	rs_out <= register[rs_read];
-	rt_out <= register[rt_read];
+	if (Jump == 2'b01) begin					//-IAN- if jal, rs is set to instrut fetch bits [25:0]
+		rs_out <= register[31];
+	end else begin	
+		rs_out <= register[rs_read];
+		rt_out <= register[rt_read];
+	end
 end
 
 always @(clock_debug) begin
