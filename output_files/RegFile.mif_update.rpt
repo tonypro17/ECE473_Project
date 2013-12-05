@@ -1,0 +1,76 @@
+MIF/HEX Update report for RegFile
+Thu Dec 05 18:14:12 2013
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. MIF/HEX Update Summary
+  3. MIF/HEX Update Processed Files
+  4. MIF/HEX Update Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Thu Dec 05 18:14:12 2013 ;
+; Revision Name         ; RegFile                               ;
+; Top-level Entity Name ; RegFile                               ;
+; Family                ; Cyclone II                            ;
+; Device                ; EP2C35F672C6                          ;
++-----------------------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                                       ;
++--------------------------------------------------------------------------------------+
+; File Name                                                                            ;
++--------------------------------------------------------------------------------------+
+; C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/data.hex      ;
+; C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/instr_mem.hex ;
++--------------------------------------------------------------------------------------+
+
+
++-------------------------+
+; MIF/HEX Update Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit MIF/HEX Update
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 05 18:14:09 2013
+Info: Command: quartus_cdb RegFile -c RegFile --update_mif
+Critical Warning (127005): Memory depth (1024) in the design file differs from memory depth (177) in the Memory Initialization File "C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/instr_mem.hex" -- setting initial value for remaining addresses to 0
+Warning (113007): Byte addressed memory initialization file "data.hex" was read in the word-addressed format
+Critical Warning (127004): Memory depth (1024) in the design file differs from memory depth (4093) in the Memory Initialization File "C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/data.hex" -- truncated remaining initial content value to fit RAM
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/data.hex
+    Info (39025): Processed Memory Initialization File C:/Documents and Settings/Ian/Desktop/473 Final Project/ECE473_Project/instr_mem.hex
+Info: Quartus II 32-bit MIF/HEX Update was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 342 megabytes
+    Info: Processing ended: Thu Dec 05 18:14:12 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
