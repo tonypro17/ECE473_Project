@@ -9,6 +9,7 @@ module control(
 	input wire [5:0] funct,
 	input wire [4:0] rs,					//-IAN- added rs and rd inputs for jump instruction forwarding
 	input wire [4:0] previous_rd,
+	input wire clock,
 	
 	output reg RegWrite,
 	output reg MemToReg,
@@ -36,18 +37,16 @@ module control(
 		Branch_op = 3'b000;
 	end
 	
-	always @* begin
-		RegWrite = 0;
-		MemToReg = 0;
-		MemRead = 0;
-		MemWrite = 0;
-		Branch = 0;
-		RegDst = 0;
-		ALUOp = 4'b0000;
-		ALUSrc = 0;
-		Jump = 2'b00;
-		J_Jump = 0;
-		Branch_op = 3'b000;
+	always @(negedge clock) begin
+		RegWrite <= 0;
+		MemToReg <= 0;
+		MemRead <= 0;
+		MemWrite <= 0;
+		Branch <= 0;
+		RegDst <= 0;
+		ALUOp <= 4'b0000;
+		ALUSrc <= 0;
+		Branch_op <= 3'b000;
 		// check opcode
 		if (opcode == 6'b000000) begin 				//			opcode = 0 means R-CODE instruction
 			// check function code
@@ -84,11 +83,6 @@ module control(
 			end else if (funct == 6'b000011) begin	//-tony-	funct = 000011 means SRA instruction
 				RegWrite <= 1;
 				ALUOp <= 4'b1001;
-			end else if (funct == 6'b001000) begin	//-tony-	funct = 001000 means JR instruction
-		/*		if (rs==previous_rd) begin
-					Jump <=2'b10;							//-IAN- jump with forwarding
-				end else begin */
-					Jump <=2'b01;					//-IAN- jump with NO forwarding
 			end
 			
 		end else if (opcode == 6'b001100) begin // tony: 001100 = andi
@@ -144,6 +138,14 @@ module control(
 			ALUSrc <= 1;
 			RegWrite <= 1;
 			RegDst <= 1;
+		end
+	end
+		
+	always @* begin
+		Jump <= 2'b00;
+		J_Jump <= 0;
+		if (opcode == 6'b000000 && funct == 6'b001000) begin //-tony-	funct = 001000 means JR instruction
+			Jump <=2'b01;
 		end else if (opcode == 6'b000011) begin //-IAN- 000011 = jal 
 			Jump <= 2'b11; 							 //-IAN- jump with link
 			J_Jump <= 1;
@@ -151,5 +153,4 @@ module control(
 			J_Jump <= 1;
 		end
 	end
-		
 endmodule

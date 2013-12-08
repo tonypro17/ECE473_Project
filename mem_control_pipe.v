@@ -11,6 +11,8 @@ module mem_control_pipe (
 	input wire Branch,
 	input wire clk,
 	input wire reset,
+	input wire flush,
+	input wire wen,
 	// outputs
 	output reg MemRead_o,
 	output reg MemWrite_o,
@@ -23,11 +25,11 @@ initial begin
 end
 	
 always @(posedge clk) begin
-	if (reset == 1) begin
+	if (reset == 1 || flush == 1) begin
 		MemRead_o <= 0;
 		MemWrite_o <= 0;
 		Branch_o <= 0;
-	end else begin
+	end else if (wen == 1) begin
 		MemRead_o <= MemRead;
 		MemWrite_o <= MemWrite;
 		Branch_o <= Branch;

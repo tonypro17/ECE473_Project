@@ -10,22 +10,17 @@ module adder(
 	input wire unsigned[31:0] rt_unsigned,
 	input wire [3:0] ALUOp,
 	input wire [4:0] shamt,
-	input wire clock,        				  		// -IAN-	added clock so ALU can be clocked on NEGEDGE (suggested by TA)
-	output reg [31:0] result,
-	output reg zero);
+	output reg [31:0] result);
 	
 	
-	always @* begin			  		// -IAN-	changed to clock on NEGEDGE 
-		zero = 0;
+	always @* begin
+		result <= 0;
 		if (ALUOp == 4'b0001) begin 			  	//			ALUOp = 0001 means ADD instruction
 			result <= rs + rt;
 		end else if (ALUOp == 4'b1010) begin 	// -IAN-	ALUOp = 1010 means ADDU instruction
 			result <= rs_unsigned + rt_unsigned;
 		end else if (ALUOp == 4'b0010) begin 	// -IAN-	ALUOp = 0010 means SUB instruction
-			result <= 0;
-			if (rs - rt == 0) begin
-				zero <= 1;
-			end	
+			result <= rs - rt;
 		end else if (ALUOp == 4'b1011) begin 	// -IAN-	ALUOp = 1011 means SUBU instruction
 			result <= rs_unsigned - rt_unsigned;
 		end else if (ALUOp == 4'b0011) begin 	// -IAN-	ALUOp = 0011 means AND instruction
@@ -44,22 +39,7 @@ module adder(
 			result <= rt >>> shamt;
 		end else if (ALUOp == 4'b1111) begin	//-IAN-	ALUOp = 1111 means lui function
 			result <= rt << 16;	
-		end else if (ALUOp == 4'b1100) begin	//tony: 1100 = BGTZ
-			if (rs > 0) begin
-				zero <= 1;
-			end
-		end else if (ALUOp == 4'b1101) begin	// tony: 1101 = BGEZ
-			if (rs >= 0) begin
-				zero <= 1;
-			end
-		end else if (ALUOp == 4'b1110) begin	//tony: 1110 = bne
-			result <= 0;
-			if (rs - rt != 0) begin
-				zero <= 1;
-			end
-		end else if (ALUOp == 4'b0000) begin 	//	ALUOp = 0000 means no ALU function
-			result <= 0;
-		end		
+		end	
 	end
 	
 endmodule

@@ -13,6 +13,8 @@ module ex_control_pipe (
 	input wire J_Jump,
 	input wire clk,
 	input wire reset,
+	input wire flush,
+	input wire wen,
 	// outputs
 	output reg RegDst_o,
 	output reg [3:0] ALUOp_o,
@@ -29,13 +31,13 @@ initial begin
 end
 	
 always @(posedge clk) begin
-	if (reset == 1) begin
+	if (reset == 1 || flush == 1) begin
 		RegDst_o = 0;
 		ALUOp_o = 4'b0000;
 		ALUSrc_o = 0;
 		Jump_o = 2'b00;
 		J_Jump_o = 0;		
-	end else begin
+	end else if (wen == 1) begin
 		RegDst_o <= RegDst;
 		ALUOp_o <= ALUOp;
 		ALUSrc_o <= ALUSrc;

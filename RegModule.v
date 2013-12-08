@@ -30,6 +30,7 @@ initial begin
 	for (i = 0; i<32; i=i+1) begin
 		register[i] = 0;
 	end
+	register[29] = 32'h7fffeffc;
 end
 
 always @(negedge clock) begin
@@ -37,12 +38,13 @@ always @(negedge clock) begin
 		for (i = 0; i<32; i=i+1) begin
 			register[i] = 0;
 		end
+		register[29] = 32'h7fffeffc;
 	end else if (WriteEnable == 1) begin
 		register[rd] = write_data_in;
 	end
 	
 	if (Jump == 2'b11) begin					//-IAN- if jal instruction register 31 saves pc_address 
-		register [31] <=pc_address; 
+		register [31] <=(pc_address - 4); 
 	end
 end
 

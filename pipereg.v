@@ -16,6 +16,7 @@ module pipereg (
 	input wire [31:0] imm_in,
 	input wire zero_in,
 	input wire [31:0] pc_in,
+	input wire flush,
 	output reg [31:0] out1,
 	output reg [31:0] out2,
 	output reg [4:0] rdout,
@@ -39,7 +40,7 @@ module pipereg (
 	end
 	
 	always @(posedge clock) begin
-		if (reset == 1) begin
+		if (reset == 1 || flush == 1) begin
 			out1 = 0;
 			out2 = 0;
 			rdout = 0;
