@@ -37,7 +37,7 @@ module control(
 		Branch_op = 3'b000;
 	end
 	
-	always @(negedge clock) begin
+	always @* begin
 		RegWrite <= 0;
 		MemToReg <= 0;
 		MemRead <= 0;

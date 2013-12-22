@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at pc_reg.v(17): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at pcadder.v(13): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at RegModule.v(36): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at pipereg.v(42): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at ex_control_pipe.v(33): always construct contains both blocking and non-blocking assignments
